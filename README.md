@@ -23,14 +23,15 @@ Run Backend server:
 
 ### `node server.js`
 
-##CI/CD Configuration:
 Created Docker files inside both frontend and backend directories. Build Docker images inside respective directories:
 
 ### `docker build -t frontend .`
 ### `docker build -t backend .`
 
-- Push the frontend and backend code to your GitHub respository.
+Push the frontend and backend code to your GitHub respository.
+
+## CI/CD Configuration:
 - Set Up AWS ECR by creating ECR Repositories: healthcare-frontend and healthcare-backend.
 - Created two CodeBuild Projects (healthcare-frontend and healthcare-backend) to build Docker images and push them to ECR, and then, created AWS CodePipelines.
-- Created necessary workflows to trigger AWS pipeline.
+- Created necessary workflows for frontend, backend, and to trigger AWS pipeline.
 
