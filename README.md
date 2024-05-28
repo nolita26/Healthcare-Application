@@ -33,5 +33,6 @@ Push the frontend and backend code to your GitHub respository.
 ## CI/CD Configuration:
 - Set Up AWS ECR by creating ECR Repositories: healthcare-frontend and healthcare-backend.
 - Created two CodeBuild Projects (healthcare-frontend and healthcare-backend) to build Docker images and push them to ECR, and then, created AWS CodePipelines.
+- In AWS ASG, created launch configuration and set up Auto Scaling Groups and added a new stage in existing AWS pipeline to deploy to ASG.
 - Created necessary workflows for frontend, backend, and to trigger AWS pipeline.
 
