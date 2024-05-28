@@ -98,3 +98,37 @@ jobs:
         run: |
           aws codepipeline start-pipeline-execution --name <your-pipeline-name>
 
+#aws-asg.yml:
+
+name: ASG Deployment Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Adjust branch name as needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      # Add steps to build Docker images and push them to ECR
+      
+      - name: AWS Configure
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: <your-aws-region>
+      
+      - name: Update ASG
+        run: |
+          aws autoscaling update-auto-scaling-group \
+            --auto-scaling-group-name <your-auto-scaling-group-name> \
+            --launch-configuration-name <your-launch-configuration-name> \
+            --min-size <your-min-size> \
+            --max-size <your-max-size> \
+            --desired-capacity <your-desired-capacity>
