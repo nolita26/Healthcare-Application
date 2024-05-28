@@ -1,6 +1,6 @@
 # Healthcare-Application
 
-Developed a full-stack healthcare app to streamline patient-doctor communication and medical record management. Used React, Node.js, and integrated a CI/CD pipeline using Docker, GitHub, and AWS ECR, automating the build, testing, and deployment processes to ensure efficient application delivery.
+Developed a full-stack healthcare app to streamline patient-doctor communication and medical record management. Used React, Node.js, and integrated AWS ASG to scale resources based on traffic demand, and set up a CI/CD  pipeline using Docker, GitHub, and AWS ECR, automating the build, testing, and deployment processes to ensure efficient application delivery.
 
 ## Frontend + Backend:
 
